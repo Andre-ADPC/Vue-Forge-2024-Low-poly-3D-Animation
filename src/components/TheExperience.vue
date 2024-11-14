@@ -14,4 +14,8 @@ import { OrbitControls } from '@tresjs/cientos'
     cast-shadow
   />
   <TresAxesHelper />
+  <TresMesh>
+    <TresTorusGeometry :args="[2, 0.75, 16, 32]" />
+    <TresMeshNormalMaterial />
+  </TresMesh>
 </template>
