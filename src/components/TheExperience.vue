@@ -1,21 +1,21 @@
 <script setup lang="ts">
-import { OrbitControls } from '@tresjs/cientos'
+import { OrbitControls, Stars } from '@tresjs/cientos'
+import ThePlanet from './ThePlanet.vue'
 </script>
 
 <template>
-  <TresPerspectiveCamera :position="[5, 5, 5]" />
+  <TresPerspectiveCamera :position="[0, 0, 5]" :near="0.001" :far="2000" />
   <OrbitControls />
-  <TresAmbientLight
-    :intensity="0.5"
-  />
+  <TresAmbientLight />
   <TresDirectionalLight
-    :position="[0, 2, 4]"
-    :intensity="1"
+    :shadow-bias="0.0001"
     cast-shadow
+    :position="[2, 2, 5]"
+    :look-at="[0, 0, 0]"
   />
+  <Suspense>
+    <ThePlanet />
+  </Suspense>
+  <Stars />
   <TresAxesHelper />
-  <TresMesh>
-    <TresTorusGeometry :args="[2, 0.75, 16, 32]" />
-    <TresMeshNormalMaterial />
-  </TresMesh>
 </template>
