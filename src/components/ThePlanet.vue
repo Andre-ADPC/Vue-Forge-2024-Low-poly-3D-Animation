@@ -39,10 +39,10 @@ trees.forEach((tree) => {
 
 onBeforeRender(({ delta }) => {
   if (!planetRef.value) { return }
-
-  planetRef.value.rotation.y -= delta * 0.04
-  planetRef.value.rotation.x += delta * 0.003
-  planetRef.value.rotation.z += delta * 0.02
+// Mess around with these values and try out positive and negative deltas.
+  planetRef.value.rotation.y += delta * 0.1
+  planetRef.value.rotation.x -= delta * 0.003
+  planetRef.value.rotation.z -= delta * 0.02
 })
 </script>
 
