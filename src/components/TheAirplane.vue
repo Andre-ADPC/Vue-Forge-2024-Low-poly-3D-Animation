@@ -2,14 +2,13 @@
 import { useGLTF } from '@tresjs/cientos'
 import { useLoop } from '@tresjs/core'
 import type { Object3D } from 'three'
+import { shallowRef, watch } from 'vue'
 
 const props = defineProps<{
   planet: Object3D
 }>()
 
-const { scene } = await useGLTF(
-  'https://raw.githubusercontent.com/Tresjs/assets/main/models/gltf/low-poly/airplane.gltf',
-)
+const { scene } = await useGLTF('./low-poly-planet/airplane.gltf')
 
 const airplane = scene
 scene.traverse((child) => {
@@ -25,28 +24,32 @@ props.planet.geometry.computeBoundingSphere()
 const radius = Math.abs(props.planet.geometry.boundingSphere?.radius | 1) + 0.5
 airplane.position.set(radius, 0, 0)
 
-let angle = Math.PI / 2.3 // Angle for orbiting the planet
+let angle = Math.PI / 4 // Angle for orbiting the planet
 const speed = 0.2 // Speed of orbit
 let rollAngle = 0 // Angle for aileron roll
-const rollSpeed = 2 // Speed of the roll
+const rollSpeed = 1.2 // Speed of the roll
 
 onBeforeRender(({ delta }) => {
   if (!airplane || !props.planet) { return }
 
-  // Update orbit
+  // Update orbit position
   angle += delta * speed
   const x = radius * Math.cos(angle)
   const z = radius * Math.sin(angle)
-  airplane.position.x = x
-  airplane.position.z = z
+  airplane.position.set(x, 0, z)
 
-  // Update roll
+  // Calculate yaw to align airplane to the orbit path
+  const yaw = Math.atan2(z, x) //- Math.PI / 2
+
+  // Update aileron roll (independent of yaw)
   rollAngle += delta * rollSpeed
 
   // Apply rotations
-  airplane.rotation.x = rollAngle // Longitudinal roll
-  airplane.rotation.z = -Math.PI / 2.314 // Tilting for aesthetic
-  airplane.rotation.y = -angle // Keep oriented toward orbit
+  airplane.rotation.set(
+    0, // Remove tilt/tumble (Z-axis)
+    -yaw, // Yaw to face forward along the orbit
+    rollAngle, // Roll around fuselage (X-axis)
+  )
 
   airplane.updateMatrixWorld()
 })
