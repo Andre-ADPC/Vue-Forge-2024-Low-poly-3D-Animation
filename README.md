@@ -100,7 +100,7 @@ The **default Euler <u>rotation</u> order** in Three.js (XYZ) can sometimes caus
 - Z-Axis Rotation : Affects roll (rotation around the fuselage axis). 
 
 <p align="center">
-  <img width="70%" src=".\public\assets\yrp.jpg" alt="Hero Image"><br>
+  <img width="80%" src=".\public\assets\yrp.jpg" alt="Hero Image"><br>
   <caption><i>"Yaw", "Roll" and "Pitch" in 3D Space</i></caption>
 </p>
 
