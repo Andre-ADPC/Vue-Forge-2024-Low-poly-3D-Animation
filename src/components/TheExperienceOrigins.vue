@@ -15,7 +15,7 @@ import { OrbitControls } from '@tresjs/cientos'
   />
   <TresAxesHelper />
   <TresMesh>
-    <TresTorusGeometry :args="[2, 0.75, 8, 32]" />
+    <TresTorusGeometry :args="[3, 0.15, 16, 32]" />
     <TresMeshNormalMaterial />
   </TresMesh>
 </template>
