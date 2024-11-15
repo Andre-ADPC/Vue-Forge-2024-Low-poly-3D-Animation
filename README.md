@@ -99,7 +99,11 @@ The **default Euler <u>rotation</u> order** in Three.js (XYZ) can sometimes caus
 - Y-Axis Rotation : Affects yaw (nose left/right, around vertical axis).
 - Z-Axis Rotation : Affects roll (rotation around the fuselage axis). 
 
-!["Yaw", "Roll" and "Pitch" in 3D Space](https://github.com/Andre-ADPC/vue-forge-low-poly-planet/public/assets/yrp.jpg)
+<p align="center">
+  <img width="70%" src=".\public\assets\yrp.jpg" alt="Hero Image"><br>
+  <caption><i>"Yaw", "Roll" and "Pitch" in 3D Space</i></caption>
+</p>
+
 
 When multiple rotations combine, especially with intrinsic rotations, the local axes of the object may change after each applied transformation. This is why the airplane's rotations may feel unintuitive if not carefully isolated.
 
