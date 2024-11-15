@@ -95,15 +95,14 @@ This matches how Three.js interprets the axes, so our intuition aligns perfectly
 
 The **default Euler <u>rotation</u> order** in Three.js (XYZ) can sometimes cause confusion:
 
-- X-Axis Rotation : Affects pitch (nose up/down).
-- Y-Axis Rotation : Affects yaw (nose left/right, around vertical axis).
-- Z-Axis Rotation : Affects roll (rotation around the fuselage axis). 
+- X-Axis Rotation : Affects Roll (rotation around the fuselage horizontal X-axis).
+- Y-Axis Rotation : Affects Pitch (nose up/down, rotation around vertical Y-axis).
+- Z-Axis Rotation : Affects Yaw (nose left/right, rotation around vertical  Z-axis). 
 
 <p align="center">
   <img width="80%" src=".\public\assets\yrp.jpg" alt="Hero Image"><br>
-  <caption><i>"Yaw", "Roll" and "Pitch" in 3D Space</i></caption>
+  <caption><i>"Roll", "Pitch" and "Yaw" in 3D Space</i></caption>
 </p>
-
 
 When multiple rotations combine, especially with intrinsic rotations, the local axes of the object may change after each applied transformation. This is why the airplane's rotations may feel unintuitive if not carefully isolated.
 
