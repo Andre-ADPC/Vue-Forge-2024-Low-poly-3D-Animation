@@ -1,5 +1,6 @@
 <p align="center">
   <img width="100%" src=".\public\assets\ADPC-Prj-bnr.jpg" alt="ADPC Banner Image"><br>
+  <caption><i>Ad Astra Trans Abyssum</i></caption>
 </p>
 
 # Andre's Hack on Vue Forge Episode 5 - 2024
