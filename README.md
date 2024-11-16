@@ -1,8 +1,14 @@
-![repo-banner](https://github.com/Tresjs/playground/raw/main/public/github-banner.png)
+<p align="center">
+  <img width=100%" src=".\public\assets\adpc-prj-bnr.jpeg" alt="ADPC Banner Image"><br>
+</p>
 
 # Andre's Hack on Vue Forge Episode 5 - 2024
 
 Let's see how this works shall we!
+
+---
+Vue.JS Forge 2024 Speaker - _[Alvaro Saburido](https://github.com/alvarosabu)_ creator of _[Tres.JS](https://github.com/Tresjs/tres)_
+
 
 ![repo-banner](https://github.com/Tresjs/playground/raw/main/public/github-banner.png)
 
@@ -14,7 +20,7 @@ Let's see how this works shall we!
   <a href="https://discord.gg/UCr96AQmWn"><img src="https://img.shields.io/badge/chat-discord-purple?style=flat&logo=discord" alt="discord chat"></a>
 </p>
 
-# Vue Forge Excercise - Low Poly 3D Planet 🪐
+## Vue Forge Excercise - Low Poly 3D Planet 🪐
 
 > Quick start repo for [Tres.js](https://tresjs.org) projects
 
@@ -102,7 +108,7 @@ The **default Euler <u>rotation</u> order** in Three.js (XYZ) can sometimes caus
 - Z-Axis Rotation : Affects Yaw (nose left/right, rotation around vertical  Z-axis). 
 
 <p align="center">
-  <img width="80%" src=".\public\assets\yrp.jpg" alt="Hero Image"><br>
+  <img width="80%" src=".\public\assets\yrp.webp" alt="Hero Image"><br>
   <caption><i>"Roll", "Pitch" and "Yaw" in 3D Space</i></caption>
 </p>
 
