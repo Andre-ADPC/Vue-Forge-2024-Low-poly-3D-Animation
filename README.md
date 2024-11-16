@@ -65,32 +65,48 @@ To solidify the concept, imagine a virtual box where:
 - The axes align as follows:
 
 ```perl
-                            Y+
-                             |    / Z- (into the screen)
-                             |   /
-                             |  /
-                             | /
-              X- ------------|----------- X+
-                            /|
-                           / |
-                          /  |
-                         /   |
- (out of the screen) Z+ /    |
-                             Y-
+                                          Y+ (moving upwards on the screen)
+                                          |
+                                          |    / Z- (moving into the screen)
+                                          |   /
+                                          |  /
+                                          | /
+  (moving left on screen)  X- ---------(0,0,0)--------- X+  (moving right on screen)
+                                         /|
+                                        / |
+                                       /  |
+                                      /   |
+       (moving out of the screen) Z+ /    |
+                                          |
+         (moving downwards on the screen) Y+
 
 ```
 
 ## In Our Current Scenario
 
 Given this standard described above, let’s reanalyze:
+The Greek letters ψ, θ, and φ are typically used to describe the three axes in mathematics related to the _**Euler Angles of Rotation**_.
+
+- For the **Z**-axis, **Ψ** is used. It is pronounced _"Psi"_ (silent-P) in English and _"See"_ in modern Greek. Uppercase Ψ, lowercase ψ or 𝛙; (It's the 23rd letter in the Greek alphabet : ψι psi).
+- For the **X**-axis, **Φ** is used. It is pronounced _"Phy"_ in English and in modern Greek. Uppercase Φ, lowercase ϕ or φ; (It's the 21st letter in the Greek alphabet : φι fi).  - [Alt + 966] = lowercase ϕ and [Alt + 934] = uppercase Φ.
+- For the **Y**-axis, **θ** is used. It is pronounced _"Theta"_ in English and _"Thita"_ in modern Greek. Uppercase Θ or ϴ, lowercase θ or ϑ; (It's the 8th letter in the Greek alphabet : θι thita). - [Alt + 952] = lowercase θ and [Alt + 920] = uppercase Θ.
+
+**Note:** The [Alt + numerals] does not work as expected "out of the box" in the VS Code IDE. I have no clue about whether it does in other IDEs, so do some research if you need the functionality.
+That said, if you want the standard OS behaviour from your [Alt + "KEYs"] to behave as expected, you will need to configure, or reconfigure your VS Code Instance's  _[Keybindings](https://code.visualstudio.com/docs/getstarted/keybindings)_.
+
+---
+As a simple alternative, I often refer to _[Pat Kearns' Keynote Support](https://www.keynotesupport.com/internet/special-characters-greek-letters-symbols.shtml)_ or the _[Alt Code Unicode](https://altcodeunicode.com/)_ site and simply apply the HTML HEX or DEC values discoverable there. A Quick and easy C&P from **&#913;** to **&#937;** !
+By using the notation `&#x + 0123 + ;` for HTML HEX and `&# + 123 + ;` for HTML DEC the ALT-code values are osed in the `0123` or `123` positions respectively.
+
+---
 
 <html>
 <div style="background:#1b2c31; color:#cccccc; border-radius:25px; margin:1.0em; padding:1.5em">
-<strong style="color:#ffffff; font-size:20px; margin-bottom:1.2em">1. Z-Axis (Into/Out of the Screen):</strong><br>
+<strong style="color:#ffffff; font-size:20px; margin-bottom:1.2em">1. Z-Axis or ψ (Into/Out of the Screen):</strong><br>
 As per our POV: Positive <strong style="color:blue">+Z</strong> moves toward the viewer, and negative <strong style="color:blue">-Z</strong> moves <br>into the screen.<br><br>
-<strong style="color:#ffffff; font-size:20px; margin-bottom:1.2em">2. X-Axis (Left/Right):</strong><br>
+<strong style="color:#ffffff; font-size:20px; margin-bottom:1.2em">2. X-Axis or Φ (Left/Right):</strong><br>
         Horizontal movement along the monitor: Positive <strong style="color:red">+X</strong> moves right; negative <strong style="color:red">-X</strong> moves left.<br><br>
-<strong style="color:#ffffff; font-size:20px; margin-bottom:1.2em">3. Y-Axis (Up/Down):</strong><br>
+<strong style="color:#ffffff; font-size:20px; margin-bottom:1.2em">3. Y-Axis or θ (Up/Down):</strong><br>
         Vertical movement along the monitor: Positive <strong style="color:green">+Y</strong> moves upward; negative <strong style="color:green">-Y</strong> moves downward.
 </div>
 <br>
