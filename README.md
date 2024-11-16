@@ -4,7 +4,7 @@
 </p>
 
 <p align="center">
-  <img width="80%" src=".\public\assets\adpc-prj-bnr.jpg" alt="ADPC Banner Image"><br>
+  <img width="80%" src=".\public\assets\ADPC-Prj-bnr.jpg" alt="ADPC Banner Image"><br>
 </p>
 
 # Andre's Hack on Vue Forge Episode 5 - 2024
