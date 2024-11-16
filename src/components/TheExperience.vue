@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { OrbitControls, Stars } from '@tresjs/cientos'
-import ThePlanet from './TheExperienceOrigins.vue'
+import ThePlanet from './ThePlanet.vue'
 </script>
 
 <template>
