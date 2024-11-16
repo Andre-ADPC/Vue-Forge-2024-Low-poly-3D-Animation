@@ -1,10 +1,5 @@
 <p align="center">
-  <img width="80%" src=".\public\assets\yrp.webp" alt="Hero Image"><br>
-  <caption><i>"Roll", "Pitch" and "Yaw" in 3D Space</i></caption>
-</p>
-
-<p align="center">
-  <img width="80%" src=".\public\assets\ADPC-Prj-bnr.jpg" alt="ADPC Banner Image"><br>
+  <img width="100%" src=".\public\assets\ADPC-Prj-bnr.jpg" alt="ADPC Banner Image"><br>
 </p>
 
 # Andre's Hack on Vue Forge Episode 5 - 2024
