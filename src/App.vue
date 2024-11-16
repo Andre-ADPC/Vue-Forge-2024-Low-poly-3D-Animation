@@ -11,7 +11,7 @@ import TheExperience from './components/TheExperience.vue'
 </script>
 
 <template>
-  <TresCanvas clear-color="#000000" window-size shadows :shadow-map-type="PCFSoftShadowMap">
+  <TresCanvas clear-color="#020202" window-size shadows :shadow-map-type="PCFSoftShadowMap">
     <TheExperience />
   </TresCanvas>
 </template>
