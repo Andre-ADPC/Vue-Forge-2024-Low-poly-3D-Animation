@@ -1,5 +1,5 @@
 <p align="center">
-  <img width=100%" src=".\public\assets\adpc-prj-bnr.jpeg" alt="ADPC Banner Image"><br>
+  <img width=100%" src=".\public\assets\adpc-prj-bnr.jpg" alt="ADPC Banner Image"><br>
 </p>
 
 # Andre's Hack on Vue Forge Episode 5 - 2024
@@ -134,7 +134,7 @@ When multiple rotations combine, especially with intrinsic rotations, the local 
 ### Recommendations
 
 The following is a summary extract from a very interesting explanation (with the math behind it) of Euler's and other's work on **_Rotation Representation_.**
-> In **Euler angles**, each rotation is imagined to be represented in the _post-rotation_ coordinate frame of the last rotation: `Rzyx(ψ,θ,φ) = Rz(ψ) Ry(θ) Rx(φ)` — **ZYX** Euler Angles **Yaw(ψ), Pitch(θ), Roll(φ)**. In Fixed angles, all rotations are imagined to be represented in the original (fixed) coordinate frame.
+> In **Euler angles**, each rotation is imagined to be represented in the _post-rotation_ coordinate frame of the last rotation: `Rzyx(ψ,θ,φ) = Rz(ψ) Ry(θ) Rx(φ)` — **ZYX** Euler Angles **Yaw(ψ), Pitch(θ), Roll(Φ)**. In Fixed angles, all rotations are imagined to be represented in the original (fixed) coordinate frame.
 > 
 R. Platt - Khoury College _[Four different ways to represent rotation.](https://www.khoury.northeastern.edu/home/rplatt/cs5335_fall2017/slides/euler_quaternions.pdf)_
 
