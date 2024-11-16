@@ -19,14 +19,14 @@ planet.traverse((child) => {
   }
 })
 
-const cloudsRef = ref<TresObject | null>(null)
-const clouds = Object.values(nodes).filter(node => node.name.includes('Cloud'))
+// const cloudsRef = ref<TresObject | null>(null)
+// const clouds = Object.values(nodes).filter(node => node.name.includes('Cloud'))
 
 const trees = Object.values(nodes).filter(node => node.name.includes('Tree'))
 
-const airplane = nodes.Airplane
+// const airplane = nodes.Airplane
 
-console.log('nodes', nodes)
+// console.log('nodes', nodes)
 
 trees.forEach((tree) => {
   tree.traverse((child) => {
@@ -39,7 +39,7 @@ trees.forEach((tree) => {
 
 onBeforeRender(({ delta }) => {
   if (!planetRef.value) { return }
-// Mess around with these values and try out positive and negative deltas.
+  // Mess around with these values and try out positive and negative deltas.
   planetRef.value.rotation.y += delta * 0.1
   planetRef.value.rotation.x -= delta * 0.003
   planetRef.value.rotation.z -= delta * 0.02
