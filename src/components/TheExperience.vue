@@ -19,4 +19,4 @@ import ThePlanet from './ThePlanet.vue'
   </Suspense>
   <Stars />
   <TresAxesHelper />
-</template>ß
+</template>
