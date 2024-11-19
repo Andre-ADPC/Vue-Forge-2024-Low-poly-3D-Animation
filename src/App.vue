@@ -4,14 +4,14 @@ import { PCFSoftShadowMap } from 'three'
 
 // Render various Experiences individually or combined by building other Experience versions.
 
-// import TheExperience from './components/TheExperienceOrigins.vue'
-// import TheExperience from './components/TheExperienceAirplane.vue'
-// import TheExperience from './components/ThePlanet.vue'
-import TheExperience from './components/TheExperience.vue'
+// import TheScene from './components/TheSceneOrigins.vue'
+// import TheScene from './components/TheSceneAirplane.vue'
+// import TheScene from './components/ThePlanet.vue'
+import TheScene from './components/TheScene.vue'
 </script>
 
 <template>
   <TresCanvas clear-color="#020202" window-size shadows :shadow-map-type="PCFSoftShadowMap">
-    <TheExperience />
+    <TheScene />
   </TresCanvas>
 </template>
