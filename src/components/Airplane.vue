@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useGLTF } from '@tresjs/cientos'
 import { useLoop } from '@tresjs/core'
-import type { Object3D } from 'three'
+import type { Object3D, Vector3 } from 'three' // Vector3 will be used later, 
 import { Mesh } from 'three'
 import { shallowRef, watch } from 'vue'
 
