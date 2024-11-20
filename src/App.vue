@@ -2,7 +2,7 @@
 import { TresCanvas } from '@tresjs/core'
 import { PCFSoftShadowMap } from 'three'
 
-// Render various Experiences individually or combined by building other Experience versions.
+// Render Various Scenes Individually or Combined by Building other Scene Versions.
 
 // import TheScene from './components/TheSceneOrigins.vue'
 // import TheScene from './components/TheSceneAirplane.vue'
