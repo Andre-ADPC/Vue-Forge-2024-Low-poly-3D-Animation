@@ -1,57 +1,76 @@
 <script setup lang="ts"> 
-import { ref } from 'vue' 
+import { ref, shallowRef } from 'vue'
 import { useGLTF } from '@tresjs/cientos' 
 import { type TresObject, useLoop } from '@tresjs/core' 
 import Clouds from './Clouds.vue' 
 import Airplane from './Airplane.vue' 
 
-const { nodes } = await useGLTF('/low-poly-planet/low-poly-planet.glb')
+// Reactive references
+const planetRef = ref<TresObject | null>(null)
+const icosphere = shallowRef<TresObject | null>(null)
 
-const { onBeforeRender } = useLoop() 
+// Load GLTF model asynchronously
+const nodes = shallowRef<Record<string, any>>({})
+useGLTF('./public/assets/low-poly-planet.glb').then(({ nodes: loadedNodes }) => {
+  nodes.value = loadedNodes
 
-const planetRef = ref<TresObject | null>(null) 
-const planet = nodes.Planet 
-const icosphere = nodes.Icosphere 
+  const planet = nodes.value.Planet
+  if (planet) {
+    planet.traverse((child) => {
+      if (child.type === 'Mesh') {
+        child.receiveShadow = true
+      }
+    })
+    planetRef.value = planet
+  }
 
-planet.traverse((child) => { 
-    if (child.type === 'Mesh') { 
-        child.receiveShadow = true 
-    } 
-}) 
+  const icosphereNode = nodes.value.Icosphere
+  if (icosphereNode) {
+    icosphereNode.traverse((child) => {
+      if (child.type === 'Mesh') {
+        child.castShadow = true
+        child.receiveShadow = true
+      }
+    })
+    icosphere.value = icosphereNode
+  }
 
-const cloudsRef = ref<TresObject | null>(null) 
-const clouds = Object.values(nodes).filter(node => node.name.includes('Clouds'))
+  // Process trees for shadows
+  const trees = Object.values(nodes.value).filter((node) => node.name.includes('Tree'))
+  trees.forEach((tree) => {
+    tree.traverse((child) => {
+      if (child.type === 'Mesh') {
+        child.castShadow = true
+        child.receiveShadow = true
+      }
+    })
+  })
+})
 
-const trees = Object.values(nodes).filter(node => node.name.includes('Tree')) 
+// Animation loop for planet rotation
+const { onBeforeRender } = useLoop()
+onBeforeRender(({ delta }) => {
+  if (planetRef.value) {
+    // Rotate the planet dynamically
+    planetRef.value.rotation.y += delta * 0.1
+    planetRef.value.rotation.x -= delta * 0.003
+    planetRef.value.rotation.z -= delta * 0.02
+  }
+})
+</script>
 
-const airplane = nodes.Airplane 
+<template>
+  <!-- Render planet -->
+  <primitive ref="planetRef" v-if="planetRef" :object="planetRef" />
 
-console.log('nodes', nodes) 
+  <!-- Add airplane, passing the icosphere -->
+  <Airplane v-if="icosphere" :planet="icosphere" />
 
-trees.forEach((tree) => { 
-    tree.traverse((child) => { 
-        if (child.type === 'Mesh') { 
-            child.castShadow = true 
-            child.receiveShadow = true 
-        } 
-    }) 
-}) 
-
-onBeforeRender(({ delta }) => { 
-    if (!planetRef.value) { return }
-
-    planetRef.value.rotation.y -= delta * 0.04 
-    planetRef.value.rotation.x += delta * 0.003 
-    planetRef.value.rotation.z += delta * 0.02 
-}) 
-</script> 
-
-<template> 
-    <primitive ref="planetRef" :object="planet" /> 
-    <Airplane :planet="icosphere" />
-    <Clouds 
-        v-for="cloud of [1, 2, 3, 4, 5, 6, 7, 8, 9]" 
-        :key="cloud" 
-        :planet="icosphere" 
-    /> 
-</template>ß
+  <!-- Render multiple clouds around the planet -->
+  <Clouds
+    v-for="cloud of 9"
+    :key="cloud"
+    v-if="icosphere"
+    :planet="icosphere"
+  />
+</template>
