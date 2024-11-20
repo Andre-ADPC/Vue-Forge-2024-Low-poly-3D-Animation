@@ -5,7 +5,7 @@ import type { Object3D } from 'three'
 import { Mesh } from 'three'
 import { shallowRef, watch } from 'vue'
 
-// 
+// See Notes in CODE_BUDDY.MD for additional information on Strict Types for TS.
 
 // Props for Passing the Planet Object
 const props = defineProps<{
