@@ -8,7 +8,9 @@ const props = defineProps<{
   planet: Object3D
 }>()
 
-const { scene } = await useGLTF('./low-poly-planet/airplane.gltf')
+const { scene } = await useGLTF(
+  './public/assets/airplane.gltf',
+)
 
 const airplane = scene
 scene.traverse((child) => {
