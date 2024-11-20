@@ -66,31 +66,38 @@ __2. Integrate Prettier for Formatting:__
 
 ```
 
+__3. Remove Redundant Linters:__
 
+- If ESLint is configured for Vue + TypeScript and Prettier handles formatting, you may not need other linting features.
+- For those who still use __Vetur__, consider disabling Vetur's linting in the extensions' settings.
+- The newer __Vue - Official__ extension has replaced __~~Vetur~~__ as the recommended option already.
+
+---
 
 ## 2. `watch` vs `watchEffect`
 
 ### Key Differences
 
--    __watchEffect:__
-        - Automatically tracks dependencies inside the effect function.
-        - Runs immediately upon setup and whenever dependencies change.
-        - Does not expose the previous or current value of a reactive variable.
-        - Usage: Ideal for _dependency-less_ tracking or when you want automatic reactivity.
+- __watchEffect:__
+- Automatically tracks dependencies inside the effect function.
+- Runs immediately upon setup and whenever dependencies change.
+- Does not expose the previous or current value of a reactive variable.
+- Usage: Ideal for _dependency-less_ tracking or when you want automatic reactivity.
 
--    __watch:__
-        - Explicitly tracks changes to one or more reactive sources.
-        - Provides access to both previous and current values.
-        - Usage: Suitable when you need fine-grained control over reactivity or track specific reactive sources. 
+- __watch:__
+- Explicitly tracks changes to one or more reactive sources.
+- Provides access to both previous and current values.
+- Usage: Suitable when you need fine-grained control over reactivity or track specific reactive sources. 
 
 __Which One Should We Use?__
 
 In this case, watch is more appropriate because:
 
--    We are specifically tracking `props.planet` and reacting only when it changes.
--    It allows us to type `planet` correctly in the callback, ensuring properties like geometry are safely accessed.
-    
+- We are specifically tracking `props.planet` and reacting only when it changes.
+- It allows us to type `planet` correctly in the callback, ensuring properties like geometry are safely accessed.
+
 ### Fixed Implementation
+
 __Updated watch with Proper Typing:__
 
 ```typescript
