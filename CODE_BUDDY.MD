@@ -87,7 +87,7 @@ __3. Remove Redundant Linters:__
 - __watch:__
 - Explicitly tracks changes to one or more reactive sources.
 - Provides access to both previous and current values.
-- Usage: Suitable when you need fine-grained control over reactivity or track specific reactive sources. 
+- Usage: Suitable when you need fine-grained control over reactivity or track specific reactive sources.
 
 __Which One Should We Use?__
 
