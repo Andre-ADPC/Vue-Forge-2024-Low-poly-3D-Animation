@@ -1,9 +1,10 @@
 module.exports = {
-    plugins: ["vue", "@typescript-eslint"],
+    plugins: ["vue", "@typescript-eslint", "tailwindcss"],
     extends: [
         "eslint:recommended",
         "plugin:vue/vue3-recommended",
         "plugin:@typescript-eslint/recommended",
+        "plugin:tailwindcss/recommended",
         "prettier",
     ],
     parser: "vue-eslint-parser",
@@ -84,8 +85,8 @@ module.exports = {
             }
         ],
         "vue/html-indent": [
-            "error",
-            4
+            "error", // Standardize Vue indentation (2 spaces)
+            2
         ],
         "vue/html-self-closing": [
             "error",
@@ -109,6 +110,15 @@ module.exports = {
                 }
             }
         ],
+        "tailwindcss/no-custom-classname": "off", // Allow custom Tailwind class names
+        "no-console": "warn", // Warn for debug logs
+        "camelcase": [
+            "error",
+            {
+                ignoreDestructuring: true,
+                properties: "never",
+            },
+    ],
         "vue/no-unused-components": "off",
         "vue/no-v-html": "off",
         "vue/require-default-prop": "off",
