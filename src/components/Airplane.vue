@@ -1,21 +1,21 @@
 <script setup lang="ts">
 import { useGLTF } from '@tresjs/cientos'
 import { TresObject, useLoop } from '@tresjs/core'
-import type { Object3D, Mesh, Vector3 } from 'three' // Vector3 will be used later, 
+import { Object3D, Mesh, Vector3 } from 'three' // Vector3 will be used later, 
 import { shallowRef, watch } from 'vue'
 
 // See Notes in CODE_BUDDY.MD for additional information on Strict Types for TS.
 
 // Props for Passing the Planet Object
 const props = defineProps<{
-  planet: Object3D
+  planet: TresObject
 }>()
 
 // Load the Aeroplane GLTF Model Asynchronously
 const airplane = shallowRef<Object3D | null>(null)
 
 // Apply `shallowRef` or `ref` for Handling `async` Loading Properly
-useGLTF('./public/assets/airplane.gltf').then(({ scene }) => {
+useGLTF('/assets/airplane.gltf').then(({ scene }) => {
   scene.traverse((child) => {
     if (child instanceof Mesh) {
       child.castShadow = true
@@ -35,7 +35,7 @@ const rollSpeed = 1.2 // Speed of the roll
 const radius = shallowRef(1)
 // The `props.planet.geometry.computeBoundingSphere()` is Invoked Correctly.
 // Confirming: `boundingSphere?.radius` Uses a Fallback Value other than | 1
-watch(() => props.planet, (planet: Object3D | null) => {
+watch(() => props.planet, (planet: TresObject | null) => {
   if (planet instanceof Mesh && planet.geometry) {
     planet.geometry.computeBoundingSphere()
     radius.value = Math.abs(planet.geometry.boundingSphere?.radius || 1) + 0.5
