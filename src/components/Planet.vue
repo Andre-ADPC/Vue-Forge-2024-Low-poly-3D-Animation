@@ -1,23 +1,23 @@
 <script setup lang="ts"> 
 import { ref, shallowRef } from 'vue'
 import { useGLTF } from '@tresjs/cientos' 
-import { type TresObject, useLoop } from '@tresjs/core' 
+import { TresObject, useLoop } from '@tresjs/core' 
 import { Mesh, Object3D } from 'three'
 import Clouds from './Clouds.vue' 
 import Airplane from './Airplane.vue' 
 
 // Reactive references
 const planetRef = ref<TresObject | null>(null)
-const icosphere = shallowRef<TresObject | null>(null)
+const icosphere = shallowRef<Object3D | null>(null)
 
 // Load GLTF model asynchronously
 const nodes = shallowRef<Record<string, any>>({})
-useGLTF('./public/assets/low-poly-planet.glb').then(({ nodes: loadedNodes }) => {
+useGLTF('/assets/low-poly-planet.glb').then(({ nodes: loadedNodes }) => {
 nodes.value = loadedNodes
 
 const planet = nodes.value.Planet
 if (planet) {
-    planet.traverse((child) => {
+    planet.traverse((child: { receiveShadow: boolean }) => {
         if (child instanceof Mesh) {
         child.receiveShadow = true
     }
@@ -27,7 +27,7 @@ if (planet) {
 
 const icosphereNode = nodes.value.Icosphere
 if (icosphereNode) {
-    icosphereNode.traverse((child) => {
+    icosphereNode.traverse((child: { castShadow: boolean; receiveShadow: boolean }) => {
         if (child instanceof Mesh) {
         child.castShadow = true
         child.receiveShadow = true
@@ -39,7 +39,7 @@ if (icosphereNode) {
 // Process trees for shadows
 const trees = Object.values(nodes.value).filter((node) => node.name.includes('Tree'))
     trees.forEach((tree) => {
-        tree.traverse((child) => {
+        tree.traverse((child: { castShadow: boolean; receiveShadow: boolean }) => {
     if (child instanceof Mesh) {
             child.castShadow = true
             child.receiveShadow = true
