@@ -19,4 +19,4 @@ export default {
   daisyui: {
     themes: ["light", "dark"], // Example: Pre-configured themes
   },
-}
+};
