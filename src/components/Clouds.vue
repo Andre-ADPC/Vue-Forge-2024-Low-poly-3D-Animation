@@ -1,18 +1,18 @@
 <script setup lang="ts">
 import { useGLTF } from '@tresjs/cientos'
-import { useLoop } from '@tresjs/core'
-import type { Object3D, Vector3 } from 'three' // Vector3 will be used later, leave it in.
+import { useLoop, TresObject3D } from '@tresjs/core'
+import { Object3D, Vector3 } from 'three' // Vector3 will be used later, leave it in.
 import { Mesh } from 'three'
 import { shallowRef, watch } from 'vue'
 
 // Props for Passing the Planet Object
 const props = defineProps<{
-  planet: Object3D
+  planet: TresObject3D
 }>()
 
 // Load the cloud GLTF model asynchronously
 const cloud = shallowRef<Object3D | null>(null)
-useGLTF('./public/assets/cloud.gltf').then(({ scene }) => {
+useGLTF('/assets/cloud.gltf').then(({ scene }) => {
   const loadedCloud = scene.children[0] as Object3D
   loadedCloud.castShadow = true
 
@@ -34,7 +34,7 @@ useGLTF('./public/assets/cloud.gltf').then(({ scene }) => {
 const radius = shallowRef(1)
 // The `props.planet.geometry.computeBoundingSphere()` is Invoked Correctly.
 // Confirming: `boundingSphere?.radius` Uses a Fallback Value other than | 1
-watch(() => props.planet, (planet: Object3D | null) => {
+watch(() => props.planet, (planet: TresObject3D | null) => {
   if (planet instanceof Mesh && planet.geometry) {
     planet.geometry.computeBoundingSphere()
     radius.value = Math.abs(planet.geometry.boundingSphere?.radius || 1) + 0.5
