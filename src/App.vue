@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useSettingsStore } from '@/pinia_stores/useSettingsStore'
+import { useSettingsStore } from './pinia_stores/useSettingsStore'
 import { TresCanvas } from '@tresjs/core'
 import { PCFSoftShadowMap } from 'three'
 import TheScene from './components/TheScene.vue'
