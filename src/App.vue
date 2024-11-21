@@ -19,15 +19,15 @@ const settingsStore = useSettingsStore()
     </TresCanvas>
 
     <!-- Menu Button -->
-    <button class="menu-button" @click="settingsStore.toggleModal">Menu</button>
+    <button class="fixed px-4 py-2 font-bold text-white bg-blue-500 rounded btn top-4 right-4" @click="settingsStore.toggleModal">Menu</button>
 
     <!-- Modal -->
-    <div v-if="settingsStore.isModalOpen" class="modal-overlay">
-      <div class="modal-content">
+    <div v-if="settingsStore.isModalOpen" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-75">
+      <div class="p-6 bg-white rounded-lg shadow-lg w-96">
         <h2>Settings</h2>
 
         <!-- Master Visibility Toggle -->
-        <div class="modal-section">
+        <div class="mb-4">
           <label class="flex items-center gap-2">
             <input
               type="checkbox"
@@ -39,7 +39,7 @@ const settingsStore = useSettingsStore()
         </div>
 
         <!-- Component Visibility Toggles -->
-        <div class="modal-section">
+        <div class="mb-4">
           <h3>Component Visibility</h3>
           <label class="flex items-center gap-2">
             <input type="checkbox" v-model="settingsStore.visibility.coordinates" />
@@ -60,7 +60,7 @@ const settingsStore = useSettingsStore()
         </div>
 
         <!-- Adjustable Parameters -->
-        <div class="modal-section">
+        <div class="mb-4">
           <h3>Adjustable Parameters</h3>
           <div>
             <label>Rotation Speed</label>
@@ -83,7 +83,7 @@ const settingsStore = useSettingsStore()
         </div>
 
         <!-- Controls -->
-        <div class="modal-section">
+        <div class="mb-4">
           <button @click="settingsStore.resetSettings">Reset to Default</button>
           <button @click="settingsStore.toggleModal">Apply</button>
         </div>

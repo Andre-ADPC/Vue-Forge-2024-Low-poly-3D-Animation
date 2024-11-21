@@ -7,7 +7,7 @@ import { PCFSoftShadowMap } from 'three'
 // import TheExperience from './components/TheExperienceOrigins.vue'
 // import TheExperience from './components/TheExperienceAirplane.vue'
 // import TheExperience from './components/ThePlanet.vue'
-import TheExperience from './components/TheExperience.vue'
+import TheExperience from './components/TheScene.vue'
 </script>
 
 <template>
