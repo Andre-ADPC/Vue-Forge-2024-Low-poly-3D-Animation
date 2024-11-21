@@ -6,8 +6,10 @@ export default {
   prefix: 'tw-',
   important: false,
   content: [
-    "./index.html",
-    "./src/**/*.{vue,js,ts,jsx,tsx,glsl}",
+    './public/index.html',
+    './src/**/*.{vue,js,ts}',
+    './src/views/**/*.{vue,js,ts}',
+    './src/components/**/*.{vue,js,ts}',
   ],
   theme: {
     extend: {},

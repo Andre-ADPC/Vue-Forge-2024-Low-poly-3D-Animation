@@ -94,4 +94,8 @@ const settingsStore = useSettingsStore()
 
 <style>
 /* Refer to style.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind variants;
 </style>
