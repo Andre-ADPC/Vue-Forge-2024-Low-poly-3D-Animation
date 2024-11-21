@@ -11,7 +11,12 @@ Let's see how this works shall we!
   <a href="https://www.npmjs.com/package/vue"><img src="https://img.shields.io/npm/v/vue/latest.svg?label=%20&logo=vuedotjs&color=95d4b6&logoColor=3b5448" alt="Vue"></a>
   <a href="https://www.npmjs.com/package/typescript"><img src="https://img.shields.io/npm/v/typescript/latest.svg?label=%20&logo=typescript&color=f4f4f4&logoColor=3178c6" alt="threejs"></a>
   <a href="https://www.npmjs.com/package/vite"><img src="https://img.shields.io/npm/v/vite/latest.svg?label=%20&logo=vite&color=AE58FF&logoColor=FFB310" alt="vite"></a>
+  <a href="https://www.npmjs.com/package/tailwindcss"><img src="https://img.shields.io/npm/v/tailwindcss/latest.svg?label=%20&logo=tailwindcss&color=0f172a&logoColor=38bdf8" alt="tailwindcss"></a>
+  <a href="https://www.npmjs.com/package/pinia"><img src="https://img.shields.io/npm/v/pinia/latest.svg?label=%20&logo=pinia&color=0f172a&logoColor=38bdf8" alt="pinia"></a>
+  <a href="https://www.npmjs.com/package/daisyui"><img src="https://img.shields.io/npm/v/daisyui/latest.svg?label=%20&logo=daisyui&color=606060&logoColor=1ad1a5" alt="daisyui"></a>
   </p>
+
+<p align="center">For Related TS, Config & Other Tips see the "<a href="/CODE_BUDDY.MD" alt="Code-Buddy">Code-Buddy</a>" Page</p>
 
 ---
 Vue.JS Forge 2024 Speaker - _[Alvaro Saburido](https://github.com/alvarosabu)_ creator of _[Tres.JS](https://github.com/Tresjs/tres)_
