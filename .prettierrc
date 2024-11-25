@@ -1,46 +1,45 @@
 {
-    "__Comment-0__": "The Global Configuration Settings for Prettier as Set in the 'settings.json' file of VS Code.",
-  
-    "__Comment-1__": "The Path setting is used when a Global Configuration File is Desired. Remove the 'filepath' line when a Project-specific Configuration is required.",
-    "filepath": "c:\\Users\\andre\\AppData\\Roaming\\Code\\User\\settings.json",
-  
-    "__Comment-2__": "Possible conflicting settings with EditorConfig",
-    "printWidth": 120,
-    "proseWrap": "preserve",
-    "quoteProps": "as-needed",
-    "semi": true,
-    "singleQuote": true,
-    "tabWidth": 2,
-    "trailingComma": "es5",
-    "useTabs": false,
-    "bracketSpacing": true,
-    "endOfLine": "crlf",
-    "htmlWhitespaceSensitivity": "css",
-  
-    "__Comment-3__": "Prettier-Specific settings",
-    "arrowParens": "always",
-    "requirePragma": false,
-    "insertPragma": true,
-  
-    "__Comment-4__": "Prettier Language-Specific settings",
-    "vueIndentScriptAndStyle": true,
-    "jsxBracketSameLine": false,
-    "jsxSingleQuote": false,
-  
-    "__Comment-5__": "Prettier Overide settings",
-    "overrides": [
-      {
-        "files": ".prettierrc",
-        "options": {
-          "parser": "json"
-        }
-      },
-      {
-        "files": "*.js",
-        "options": {
-          "parser": "babel"
-        }
+  "__Comment-0__": "The Global Configuration Settings for Prettier as Set in the 'settings.json' file of VS Code.",
+
+  "__Comment-1__": "The Path setting is used when a Global Configuration File is Desired. Remove the 'filepath' line when a Project-specific Configuration is required.",
+  "filepath": "c:\\Users\\andre\\AppData\\Roaming\\Code\\User\\settings.json",
+
+  "__Comment-2__": "Possible conflicting settings with EditorConfig",
+  "printWidth": 120,
+  "proseWrap": "preserve",
+  "quoteProps": "as-needed",
+  "semi": true,
+  "singleQuote": true,
+  "tabWidth": 2,
+  "trailingComma": "es5",
+  "useTabs": false,
+  "bracketSpacing": true,
+  "endOfLine": "crlf",
+  "htmlWhitespaceSensitivity": "css",
+
+  "__Comment-3__": "Prettier-Specific settings",
+  "arrowParens": "always",
+  "requirePragma": false,
+  "insertPragma": true,
+
+  "__Comment-4__": "Prettier Language-Specific settings",
+  "vueIndentScriptAndStyle": true,
+  "jsxBracketSameLine": false,
+  "jsxSingleQuote": false,
+
+  "__Comment-5__": "Prettier Overide settings",
+  "overrides": [
+    {
+      "files": ".prettierrc",
+      "options": {
+        "parser": "json"
       }
-    ]
-  }
-  
+    },
+    {
+      "files": "*.js",
+      "options": {
+        "parser": "babel"
+      }
+    }
+  ]
+}
