@@ -1,10 +1,12 @@
-<script setup lang="ts">
-import { useSettingsStore } from './pinia_stores/useSettingsStore'
-import { TresCanvas } from '@tresjs/core'
-import { PCFSoftShadowMap } from 'three'
-import TheScene from './components/TheScene.vue'
+<!-- @format -->
 
-const settingsStore = useSettingsStore()
+<script setup lang="ts">
+  import { useSettingsStore } from './pinia_stores/useSettingsStore';
+  import { TresCanvas } from '@tresjs/core';
+  import { PCFSoftShadowMap } from 'three';
+  import TheScene from './components/TheScene.vue';
+
+  const settingsStore = useSettingsStore();
 </script>
 
 <template>
@@ -19,7 +21,12 @@ const settingsStore = useSettingsStore()
     </TresCanvas>
 
     <!-- Menu Button -->
-    <button class="fixed px-4 py-2 font-bold text-white bg-blue-500 rounded btn top-4 right-4" @click="settingsStore.toggleModal">Menu</button>
+    <button
+      class="fixed px-4 py-2 font-bold text-white bg-blue-500 rounded btn top-4 right-4"
+      @click="settingsStore.toggleModal"
+    >
+      Menu
+    </button>
 
     <!-- Modal -->
     <div v-if="settingsStore.isModalOpen" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-75">
@@ -93,9 +100,9 @@ const settingsStore = useSettingsStore()
 </template>
 
 <style>
-/* Refer to style.css */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-@tailwind variants;
+  /* Refer to style.css */
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+  @tailwind variants;
 </style>
