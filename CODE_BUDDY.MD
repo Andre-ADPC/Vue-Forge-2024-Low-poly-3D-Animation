@@ -92,7 +92,7 @@ module.exports = {
 
 The `.eslintrc.js` file is a _"legacy format"_ and contains various ESLint-Prettier Cross-configuration options to basically let both ESLint "flavours" focus on code **Linting** and Prettier focus on code **Formatting**.
 
-It is also used in this project to extend formatting for Vue.JS components, among a host of other formatting functionality.
+It is also used in this project to extend formatting AND coding rules for Vue.JS components, Tailwind CSS, TypeScript, among a host of other formatting functionality. Have a look at the **<u>[`eslintrc.js`](.eslintrc.js)</u>** file in the project root.
 
 Here is a very basic version of an `.eslintrc.js` file:
 
